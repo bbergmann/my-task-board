@@ -1,6 +1,11 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
+from app.database import Base, engine
+from app.routers import tasks
+
+Base.metadata.create_all(bind=engine)
+
 app = FastAPI(title="My Task Board API")
 
 app.add_middleware(
@@ -10,6 +15,8 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+app.include_router(tasks.router)
 
 
 @app.get("/api/health")
