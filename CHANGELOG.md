@@ -15,6 +15,13 @@ All notable changes to this project will be documented in this file.
 - Created /add-endpoint custom skill
 - Date: 2026-02-11
 
+### Phase 2 — Backend Core
+- Added SQLAlchemy models for tasks and columns with FK relationship
+- Created full CRUD endpoints for both resources with Pydantic validation
+- Set up Alembic migrations (initial schema + notes field addition)
+- Updated CLAUDE.md with backend conventions (router, schema, DI patterns)
+- Date: 2026-02-11
+
 <!--
 Format for future entries:
 

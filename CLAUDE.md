@@ -30,6 +30,9 @@ frontend/
 - **Backend:** Snake_case for files and functions. Type hints on all function signatures. Pydantic models for all request/response bodies.
 - **Frontend:** PascalCase for components, camelCase for functions/variables. One component per file.
 - **API:** RESTful routes under `/api/`. Return JSON. Use HTTP status codes correctly (201 for created, 404 for not found, 422 for validation errors).
+- **Routers:** Each resource gets `routers/{resource}.py` with prefix `/api/{resource}` and a `tags` list.
+- **Schemas:** Pydantic schemas go in `schemas/{resource}.py` with `Create`, `Update`, and `Response` variants.
+- **DB Sessions:** Use dependency injection via `Depends(get_db)` — never create sessions manually.
 - **Commits:** Specific `git add <files>` — never `git add .`. Conventional commit messages.
 
 ## Key Commands
