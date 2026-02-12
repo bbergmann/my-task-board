@@ -15,3 +15,8 @@ app.add_middleware(
 @app.get("/api/health")
 def health_check() -> dict:
     return {"status": "healthy"}
+
+
+@app.get("/api/ping")
+def ping() -> dict:
+    return {"message": "pong"}
