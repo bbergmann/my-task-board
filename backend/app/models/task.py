@@ -15,6 +15,7 @@ class Task(Base):
     status = Column(String(50), nullable=False, default="todo")
     position = Column(Integer, nullable=False, default=0)
     assignee = Column(String(100), nullable=True)
+    notes = Column(String(500), nullable=True)
     column_id = Column(Integer, ForeignKey("columns.id"), nullable=False)
     created_at = Column(DateTime, nullable=False, default=lambda: datetime.now(timezone.utc))
     updated_at = Column(DateTime, nullable=False, default=lambda: datetime.now(timezone.utc), onupdate=lambda: datetime.now(timezone.utc))

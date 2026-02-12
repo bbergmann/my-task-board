@@ -9,6 +9,7 @@ class TaskCreate(BaseModel):
     status: str = Field(default="todo", max_length=50)
     position: int = Field(default=0, ge=0)
     assignee: str | None = Field(default=None, max_length=100)
+    notes: str | None = Field(default=None, max_length=500)
     column_id: int
 
 
@@ -18,6 +19,7 @@ class TaskUpdate(BaseModel):
     status: str | None = Field(default=None, max_length=50)
     position: int | None = Field(default=None, ge=0)
     assignee: str | None = Field(default=None, max_length=100)
+    notes: str | None = Field(default=None, max_length=500)
     column_id: int | None = None
 
 
@@ -28,6 +30,7 @@ class TaskResponse(BaseModel):
     status: str
     position: int
     assignee: str | None
+    notes: str | None
     column_id: int
     created_at: datetime
     updated_at: datetime
